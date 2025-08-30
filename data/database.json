@@ -1,0 +1,141 @@
+{
+  "groups": [
+    [
+      -1001916027284,
+      {
+        "id": -1001916027284,
+        "settings": {
+          "antiAbuse": {
+            "enabled": true,
+            "level": "moderate",
+            "languages": [
+              "hindi",
+              "english",
+              "hinglish"
+            ]
+          },
+          "antiCopyright": {
+            "enabled": true,
+            "characterLimit": 120,
+            "preventEdits": true
+          },
+          "antiPromotion": {
+            "enabled": false,
+            "blockWebLinks": true,
+            "blockTelegramLinks": true
+          },
+          "whitelist": []
+        },
+        "stats": {
+          "messagesProcessed": 0,
+          "violations": 7,
+          "actionsTaken": 0,
+          "messagesLast24h": 0,
+          "violationsLast24h": 7,
+          "actionsLast24h": 0
+        },
+        "violations": [
+          {
+            "userId": 8167722027,
+            "type": "abuse",
+            "severity": "medium",
+            "timestamp": 1756577765325
+          },
+          {
+            "userId": 5599964068,
+            "type": "abuse",
+            "severity": "medium",
+            "timestamp": 1756578507105
+          },
+          {
+            "userId": 5599964068,
+            "type": "abuse",
+            "severity": "medium",
+            "timestamp": 1756578633766
+          },
+          {
+            "userId": 5599964068,
+            "type": "abuse",
+            "severity": "medium",
+            "timestamp": 1756578676313
+          },
+          {
+            "userId": 5599964068,
+            "type": "abuse",
+            "severity": "medium",
+            "timestamp": 1756578705930
+          },
+          {
+            "userId": 7550424012,
+            "type": "character_limit",
+            "severity": "low",
+            "timestamp": 1756579163966
+          },
+          {
+            "userId": 7550424012,
+            "type": "character_limit",
+            "severity": "low",
+            "timestamp": 1756579195738
+          }
+        ],
+        "joinedAt": 1756577764207
+      }
+    ]
+  ],
+  "users": [
+    [
+      8167722027,
+      {
+        "id": 8167722027,
+        "stats": {
+          "messagesSent": 0,
+          "violations": 1,
+          "abuseViolations": 1,
+          "copyrightViolations": 0,
+          "promotionViolations": 0,
+          "groupsActiveIn": 0,
+          "lastSeen": 1756577765325
+        }
+      }
+    ],
+    [
+      5599964068,
+      {
+        "id": 5599964068,
+        "stats": {
+          "messagesSent": 0,
+          "violations": 4,
+          "abuseViolations": 4,
+          "copyrightViolations": 0,
+          "promotionViolations": 0,
+          "groupsActiveIn": 0,
+          "lastSeen": 1756578705930
+        }
+      }
+    ],
+    [
+      7550424012,
+      {
+        "id": 7550424012,
+        "stats": {
+          "messagesSent": 0,
+          "violations": 2,
+          "abuseViolations": 0,
+          "copyrightViolations": 2,
+          "promotionViolations": 0,
+          "groupsActiveIn": 0,
+          "lastSeen": 1756579195738
+        }
+      }
+    ]
+  ],
+  "globalBans": [],
+  "globalMutes": [],
+  "botAdmins": [],
+  "stats": {
+    "messagesProcessed": 8,
+    "actionsTaken": 4,
+    "totalViolations": 7
+  },
+  "lastBackup": 1756579195738
+}

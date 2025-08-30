@@ -1,0 +1,39 @@
+Create a telegram security bot using grammy JS with following features
+1. Anti Abuse feature:
+    - Moderation levels are no, weak, moderate, strong and strict.
+    - Group admin with ban right shall be able to set the moderation level for the group using group admin settings. Also shall be able to enable and disable the feature.
+    - Group admin , bot admin and bot owner is exempted from the bot actions in a group.
+    - Default setting of moderation level is moderate.
+    - Language support for anti abuse is hindi, english and hinglish.
+    - check messages, captions of media and user's bio.
+    - group admin with ban right shall be able to add or remove users from whitelist where users are exempted from bot's action
+ 2. Anti copyright feature
+    - group member shall not be able to send message more than 120 characters
+    - group member shall not be able to edit messages. 
+    - Group admin , bot admin and bot owner is exempted from the bot actions in a group.
+    - check messages, captions of media and user's bio.
+    - group admin with ban right shall be able to set the set the character count using group admin settings.  Also shall be able to enable and disable the feature.
+-group admin with ban right shall be able to add or remove users from whitelist where users are exempted from bot's action
+- 120 characters is the default setting.
+  3. Anti promotion feature 
+       - Group admin , bot admin and bot owner is exempted from the bot actions in a group.
+       - user shall not be able to post links as well as telegram links in messages, captions of media and user's bio.
+        -  Group admin shall be able to enable and disable the feature.
+- group admin with ban right shall be able to add or remove users from whitelist where users are exempted from bot's action
+
+   4. group Admin with appropriate shall be able to perform actions such as ban, unban, mute, unmute, kick.
+  5. bot Admin and owner wshall be able to perform actions such as global ban, global unban, global mute, global unmute, global kick.
+6. if user joins a group then check for global ban, global mute and global kick list and if user exits then perform the respective action.
+7. add settings for bot owner to add or remove bot admins.
+8. Add group stats, user stats, bot stats.
+9. Use Grammy js advanced features to implment, bot runner, bot worker, error handling, reliability, scalability, high load management, throttling, flood limit, task queing etc.
+10. optimize database calls for better performance and low cost to db.
+11. Allow bot owner to back up db to phone or laptop using command.
+12. Add feature to get the list  along with the link of the group of where a particular user is present.
+13. Bot is active in a group when bot has minimum of ban/unban rights and mute/unmute rights, promote admin rights.
+14. Add help section explaining usage of commands available for group admins.
+15. use security middleware for the features anti abuse, anti promotion and anti copyright.
+Create downloadable project zip
+Update existing project with Replace placeholder wordlists with a large curated list (Hindi/Hinglish/English) and precompile into a binary regex cache. Add full support for detecting/editing edited_message. Implement per-group rate-limiting and flood controls with Redis
+
+use local database which is best for performance
