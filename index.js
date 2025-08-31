@@ -250,6 +250,9 @@ async function initializeBot() {
         const me = await bot.api.getMe();
         logger.info(`Bot @${me.username} initialized successfully`);
         
+        // Set bot commands for Telegram UI
+        await setMyCommands();
+        
         // Start bot
         if (config.USE_WEBHOOKS) {
             // Webhook mode (for production)
@@ -282,6 +285,97 @@ async function initializeBot() {
     } catch (error) {
         logger.error('Failed to initialize bot:', error);
         process.exit(1);
+    }
+}
+
+// Function to set bot commands for Telegram UI
+async function setMyCommands() {
+    try {
+        // Basic commands for all users
+        const commands = [
+            { command: 'start', description: 'Welcome message and bot info' },
+            { command: 'help', description: 'Show help and commands' },
+            { command: 'botinfo', description: 'Bot information and uptime' },
+            { command: 'userstats', description: 'View your personal statistics' },
+            { command: 'violations', description: 'View your violations (groups only)' }
+        ];
+        
+        // Group admin commands
+        const adminCommands = [
+            ...commands,
+            { command: 'settings', description: 'View current group settings' },
+            { command: 'settoggle', description: 'Enable/disable features' },
+            { command: 'setlevel', description: 'Set moderation level' },
+            { command: 'setcharlimit', description: 'Set character limit' },
+            { command: 'quicksetup', description: 'Quick setup with recommended settings' },
+            { command: 'resetsettings', description: 'Reset all settings to defaults' },
+            { command: 'ban', description: 'Ban a user' },
+            { command: 'unban', description: 'Unban a user' },
+            { command: 'mute', description: 'Mute a user' },
+            { command: 'unmute', description: 'Unmute a user' },
+            { command: 'kick', description: 'Kick a user' },
+            { command: 'whitelist', description: 'Manage whitelist' },
+            { command: 'groupstats', description: 'View group statistics' },
+            { command: 'topviolators', description: 'View top violators' }
+        ];
+        
+        // Bot admin commands
+        const botAdminCommands = [
+            ...adminCommands,
+            { command: 'gban', description: 'Globally ban user' },
+            { command: 'gunban', description: 'Remove global ban' },
+            { command: 'gmute', description: 'Globally mute user' },
+            { command: 'gunmute', description: 'Remove global mute' },
+            { command: 'gbanlist', description: 'View global ban list' },
+            { command: 'gmutelist', description: 'View global mute list' },
+            { command: 'botstats', description: 'View bot statistics' },
+            { command: 'adminlist', description: 'View bot admin list' }
+        ];
+        
+        // Owner commands
+        const ownerCommands = [
+            ...botAdminCommands,
+            { command: 'addadmin', description: 'Add bot admin' },
+            { command: 'removeadmin', description: 'Remove bot admin' },
+            { command: 'backup', description: 'Create database backup' },
+            { command: 'sendbackup', description: 'Send backup to DM' }
+        ];
+        
+        // Set default commands for all users
+        await bot.api.setMyCommands(commands);
+        
+        // Set commands for group administrators
+        await bot.api.setMyCommands(adminCommands, {
+            scope: { type: 'all_chat_administrators' }
+        });
+        
+        // Set commands for bot owner
+        if (config.BOT_OWNER_ID) {
+            await bot.api.setMyCommands(ownerCommands, {
+                scope: { 
+                    type: 'chat',
+                    chat_id: parseInt(config.BOT_OWNER_ID)
+                }
+            });
+        }
+        
+        // Set commands for bot admins
+        for (const adminId of config.BOT_ADMINS) {
+            try {
+                await bot.api.setMyCommands(botAdminCommands, {
+                    scope: { 
+                        type: 'chat',
+                        chat_id: parseInt(adminId)
+                    }
+                });
+            } catch (error) {
+                logger.warn(`Failed to set commands for bot admin ${adminId}:`, error.message);
+            }
+        }
+        
+        logger.info('Bot commands set successfully');
+    } catch (error) {
+        logger.error('Failed to set bot commands:', error);
     }
 }
 
