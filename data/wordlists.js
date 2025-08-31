@@ -4,28 +4,27 @@
 const wordlists = {
     english: {
         profanity: [
-            // Mild profanity (severity 1)
+            // All words downgraded to severity 1 except sexual/explicit
             { word: "damn", severity: 1 },
             { word: "hell", severity: 1 },
             { word: "crap", severity: 1 },
             { word: "bloody", severity: 1 },
             { word: "sucks", severity: 1 },
             
-            // Moderate profanity (severity 2)
-            { word: "shit", severity: 2 },
-            { word: "piss", severity: 2 },
-            { word: "bitch", severity: 2 },
-            { word: "bastard", severity: 2 },
-            { word: "ass", severity: 2 },
-            { word: "asshole", severity: 2 },
-            { word: "bullshit", severity: 2 },
-            { word: "dickhead", severity: 2 },
-            { word: "moron", severity: 2 },
-            { word: "idiot", severity: 2 },
-            { word: "stupid", severity: 2 },
-            { word: "dumb", severity: 2 },
+            { word: "shit", severity: 1 },
+            { word: "piss", severity: 1 },
+            { word: "bitch", severity: 1 },
+            { word: "bastard", severity: 1 },
+            { word: "ass", severity: 1 },
+            { word: "asshole", severity: 1 },
+            { word: "bullshit", severity: 1 },
+            { word: "dickhead", severity: 1 },
+            { word: "moron", severity: 1 },
+            { word: "idiot", severity: 1 },
+            { word: "stupid", severity: 1 },
+            { word: "dumb", severity: 1 },
             
-            // Strong profanity (severity 3)
+            // Strong profanity (sexual/explicit) kept original severity
             { word: "fuck", severity: 3 },
             { word: "fucking", severity: 3 },
             { word: "fucker", severity: 3 },
@@ -39,36 +38,35 @@ const wordlists = {
             { word: "penis", severity: 3 },
             { word: "vagina", severity: 3 },
             
-            // Severe/hate speech (severity 4)
-            { word: "nigger", severity: 4 },
-            { word: "faggot", severity: 4 },
-            { word: "retard", severity: 4 },
-            { word: "nazi", severity: 4 },
-            { word: "terrorist", severity: 4 },
-            { word: "kill yourself", severity: 4 },
-            { word: "kys", severity: 4 },
-            { word: "suicide", severity: 4 }
+            // Severe/hate speech downgraded to 1
+            { word: "nigger", severity: 1 },
+            { word: "faggot", severity: 1 },
+            { word: "retard", severity: 1 },
+            { word: "nazi", severity: 1 },
+            { word: "terrorist", severity: 1 },
+            { word: "kill yourself", severity: 1 },
+            { word: "kys", severity: 1 },
+            { word: "suicide", severity: 1 }
         ]
     },
     
     hindi: {
         profanity: [
-            // Mild (severity 1)
+            // All downgraded to severity 1 except sexual/explicit
             { word: "बेवकूफ", severity: 1 },
             { word: "मूर्ख", severity: 1 },
             { word: "गधा", severity: 1 },
             { word: "बकवास", severity: 1 },
             
-            // Moderate (severity 2)
-            { word: "हरामी", severity: 2 },
-            { word: "कुत्ता", severity: 2 },
-            { word: "सुअर", severity: 2 },
-            { word: "कमीना", severity: 2 },
-            { word: "गंदा", severity: 2 },
-            { word: "भेंचोद", severity: 2 },
-            { word: "रंडी", severity: 2 },
+            { word: "हरामी", severity: 1 },
+            { word: "कुत्ता", severity: 1 },
+            { word: "सुअर", severity: 1 },
+            { word: "कमीना", severity: 1 },
+            { word: "गंदा", severity: 1 },
+            { word: "भेंचोद", severity: 1 },
+            { word: "रंडी", severity: 3 },
             
-            // Strong (severity 3)
+            // Strong sexual/explicit kept original severity
             { word: "मादरचोद", severity: 3 },
             { word: "भोसड़ी", severity: 3 },
             { word: "गांडू", severity: 3 },
@@ -77,34 +75,32 @@ const wordlists = {
             { word: "रंडी", severity: 3 },
             { word: "भोसड़ा", severity: 3 },
             
-            // Severe (severity 4)
-            { word: "मार डालूंगा", severity: 4 },
-            { word: "आतंकवादी", severity: 4 },
-            { word: "मर जा", severity: 4 }
+            // Severe threats downgraded to 1
+            { word: "मार डालूंगा", severity: 1 },
+            { word: "आतंकवादी", severity: 1 },
+            { word: "मर जा", severity: 1 }
         ]
     },
     
     hinglish: {
         profanity: [
-            // Mild (severity 1)
             { word: "bakwas", severity: 1 },
             { word: "bewakoof", severity: 1 },
             { word: "gadha", severity: 1 },
             { word: "stupid", severity: 1 },
             
-            // Moderate (severity 2)
-            { word: "harami", severity: 2 },
-            { word: "kutta", severity: 2 },
-            { word: "suar", severity: 2 },
-            { word: "kamina", severity: 2 },
-            { word: "ganda", severity: 2 },
-            { word: "bhenchod", severity: 2 },
-            { word: "bc", severity: 2 },
-            { word: "randi", severity: 2 },
-            { word: "saala", severity: 2 },
-            { word: "ullu", severity: 2 },
+            { word: "harami", severity: 1 },
+            { word: "kutta", severity: 1 },
+            { word: "suar", severity: 1 },
+            { word: "kamina", severity: 1 },
+            { word: "ganda", severity: 1 },
+            { word: "bhenchod", severity: 3 },
+            { word: "bc", severity: 3 },
+            { word: "randi", severity: 3 },
+            { word: "saala", severity: 1 },
+            { word: "ullu", severity: 1 },
             
-            // Strong (severity 3)
+            // Strong sexual/explicit
             { word: "madarchod", severity: 3 },
             { word: "mc", severity: 3 },
             { word: "bhosadi", severity: 3 },
@@ -119,85 +115,84 @@ const wordlists = {
             { word: "bkl", severity: 3 },
             { word: "mc bc", severity: 3 },
             
-            // Severe (severity 4)
-            { word: "mar dalunga", severity: 4 },
-            { word: "maar dalunga", severity: 4 },
-            { word: "terrorist", severity: 4 },
-            { word: "atankwadi", severity: 4 },
-            { word: "mar ja", severity: 4 },
-            { word: "suicide kar", severity: 4 }
+            // Severe threats downgraded to 1
+            { word: "mar dalunga", severity: 1 },
+            { word: "maar dalunga", severity: 1 },
+            { word: "terrorist", severity: 1 },
+            { word: "atankwadi", severity: 1 },
+            { word: "mar ja", severity: 1 },
+            { word: "suicide kar", severity: 1 }
         ]
     },
     
     patterns: {
         hateSpeech: [
-            { pattern: "kill\\s+all\\s+\\w+", severity: 4 },
-            { pattern: "death\\s+to\\s+\\w+", severity: 4 },
-            { pattern: "\\w+\\s+should\\s+die", severity: 4 },
-            { pattern: "gas\\s+the\\s+\\w+", severity: 4 },
-            { pattern: "lynch\\s+\\w+", severity: 4 },
-            { pattern: "rape\\s+\\w+", severity: 4 },
-            { pattern: "burn\\s+\\w+\\s+alive", severity: 4 },
-            { pattern: "hitler\\s+was\\s+right", severity: 4 },
-            { pattern: "final\\s+solution", severity: 4 },
+            // All patterns downgraded to 1 except sexual harassment
+            { pattern: "kill\\s+all\\s+\\w+", severity: 1 },
+            { pattern: "death\\s+to\\s+\\w+", severity: 1 },
+            { pattern: "\\w+\\s+should\\s+die", severity: 1 },
+            { pattern: "gas\\s+the\\s+\\w+", severity: 1 },
+            { pattern: "lynch\\s+\\w+", severity: 1 },
+            { pattern: "rape\\s+\\w+", severity: 3 },
+            { pattern: "burn\\s+\\w+\\s+alive", severity: 1 },
+            { pattern: "hitler\\s+was\\s+right", severity: 1 },
+            { pattern: "final\\s+solution", severity: 1 },
             
-            // Religious hate
-            { pattern: "fuck\\s+islam", severity: 4 },
-            { pattern: "fuck\\s+hinduism", severity: 4 },
-            { pattern: "fuck\\s+christianity", severity: 4 },
-            { pattern: "fuck\\s+buddhism", severity: 4 },
-            { pattern: "fuck\\s+sikhs", severity: 4 },
-            { pattern: "fuck\\s+jews", severity: 4 },
+            { pattern: "fuck\\s+islam", severity: 1 },
+            { pattern: "fuck\\s+hinduism", severity: 1 },
+            { pattern: "fuck\\s+christianity", severity: 1 },
+            { pattern: "fuck\\s+buddhism", severity: 1 },
+            { pattern: "fuck\\s+sikhs", severity: 1 },
+            { pattern: "fuck\\s+jews", severity: 1 },
             
-            // Racial slurs and hate
-            { pattern: "dirty\\s+\\w+", severity: 3 },
-            { pattern: "filthy\\s+\\w+", severity: 3 },
-            { pattern: "subhuman", severity: 4 },
-            { pattern: "inferior\\s+race", severity: 4 },
-            { pattern: "master\\s+race", severity: 4 }
+            { pattern: "dirty\\s+\\w+", severity: 1 },
+            { pattern: "filthy\\s+\\w+", severity: 1 },
+            { pattern: "subhuman", severity: 1 },
+            { pattern: "inferior\\s+race", severity: 1 },
+            { pattern: "master\\s+race", severity: 1 }
         ],
         
         harassment: [
-            { pattern: "kill\\s+yourself", severity: 4 },
-            { pattern: "go\\s+die", severity: 4 },
-            { pattern: "commit\\s+suicide", severity: 4 },
-            { pattern: "end\\s+your\\s+life", severity: 4 },
-            { pattern: "nobody\\s+likes\\s+you", severity: 3 },
-            { pattern: "you\\s+are\\s+worthless", severity: 3 },
-            { pattern: "you\\s+should\\s+not\\s+exist", severity: 4 },
-            { pattern: "waste\\s+of\\s+space", severity: 3 },
-            { pattern: "world\\s+would\\s+be\\s+better\\s+without\\s+you", severity: 4 },
-            { pattern: "your\\s+parents\\s+hate\\s+you", severity: 3 },
-            { pattern: "you\\s+deserve\\s+to\\s+suffer", severity: 4 },
-            { pattern: "i\\s+hope\\s+you\\s+die", severity: 4 },
-            { pattern: "rot\\s+in\\s+hell", severity: 3 },
+            { pattern: "kill\\s+yourself", severity: 1 },
+            { pattern: "go\\s+die", severity: 1 },
+            { pattern: "commit\\s+suicide", severity: 1 },
+            { pattern: "end\\s+your\\s+life", severity: 1 },
+            { pattern: "nobody\\s+likes\\s+you", severity: 1 },
+            { pattern: "you\\s+are\\s+worthless", severity: 1 },
+            { pattern: "you\\s+should\\s+not\\s+exist", severity: 1 },
+            { pattern: "waste\\s+of\\s+space", severity: 1 },
+            { pattern: "world\\s+would\\s+be\\s+better\\s+without\\s+you", severity: 1 },
+            { pattern: "your\\s+parents\\s+hate\\s+you", severity: 1 },
+            { pattern: "you\\s+deserve\\s+to\\s+suffer", severity: 1 },
+            { pattern: "i\\s+hope\\s+you\\s+die", severity: 1 },
+            { pattern: "rot\\s+in\\s+hell", severity: 1 },
             
-            // Sexual harassment
+            // Sexual harassment kept original severity
             { pattern: "send\\s+nudes", severity: 3 },
             { pattern: "show\\s+me\\s+your", severity: 3 },
             { pattern: "i\\s+want\\s+to\\s+fuck\\s+you", severity: 4 },
             { pattern: "suck\\s+my", severity: 3 },
             { pattern: "come\\s+to\\s+my\\s+room", severity: 3 },
             
-            // Doxxing threats
-            { pattern: "i\\s+know\\s+where\\s+you\\s+live", severity: 4 },
-            { pattern: "i\\s+will\\s+find\\s+you", severity: 4 },
-            { pattern: "your\\s+address\\s+is", severity: 4 },
-            { pattern: "i\\s+have\\s+your\\s+photos", severity: 3 }
+            // Doxxing threats downgraded
+            { pattern: "i\\s+know\\s+where\\s+you\\s+live", severity: 1 },
+            { pattern: "i\\s+will\\s+find\\s+you", severity: 1 },
+            { pattern: "your\\s+address\\s+is", severity: 1 },
+            { pattern: "i\\s+have\\s+your\\s+photos", severity: 1 }
         ],
         
         spam: [
-            { pattern: "(.)\\1{10,}", severity: 2 }, // Repeated characters
-            { pattern: "\\s{5,}", severity: 1 }, // Multiple spaces
-            { pattern: "[!@#$%^&*()]{5,}", severity: 2 }, // Special character spam
-            { pattern: "[A-Z]{20,}", severity: 2 }, // All caps spam
-            { pattern: "[\ud800-\udfff]{3,}", severity: 2 } // Emoji spam
+            { pattern: "(.)\\1{10,}", severity: 1 },
+            { pattern: "\\s{5,}", severity: 1 },
+            { pattern: "[!@#$%^&*()]{5,}", severity: 1 },
+            { pattern: "[A-Z]{20,}", severity: 1 },
+            { pattern: "[\ud800-\udfff]{3,}", severity: 1 }
         ]
     },
     
-    // Additional categories for comprehensive filtering
     adult: {
         explicit: [
+            // Sexual/explicit words keep original severity
             { word: "porn", severity: 3 },
             { word: "sex", severity: 2 },
             { word: "xxx", severity: 3 },
@@ -218,40 +213,43 @@ const wordlists = {
     
     drugs: {
         substances: [
-            { word: "weed", severity: 2 },
-            { word: "marijuana", severity: 2 },
-            { word: "cocaine", severity: 3 },
-            { word: "heroin", severity: 3 },
-            { word: "meth", severity: 3 },
-            { word: "ecstasy", severity: 3 },
-            { word: "lsd", severity: 3 },
-            { word: "acid", severity: 2 },
-            { word: "molly", severity: 3 },
-            { word: "crack", severity: 3 },
-            { word: "fentanyl", severity: 4 },
-            { word: "opioid", severity: 3 },
-            { word: "xanax", severity: 2 },
-            { word: "adderall", severity: 2 }
+            // All downgraded to 1
+            { word: "weed", severity: 1 },
+            { word: "marijuana", severity: 1 },
+            { word: "cocaine", severity: 1 },
+            { word: "heroin", severity: 1 },
+            { word: "meth", severity: 1 },
+            { word: "ecstasy", severity: 1 },
+            { word: "lsd", severity: 1 },
+            { word: "acid", severity: 1 },
+            { word: "molly", severity: 1 },
+            { word: "crack", severity: 1 },
+            { word: "fentanyl", severity: 1 },
+            { word: "opioid", severity: 1 },
+            { word: "xanax", severity: 1 },
+            { word: "adderall", severity: 1 }
         ]
     },
     
     violence: {
         threats: [
-            { word: "kill", severity: 3 },
-            { word: "murder", severity: 4 },
-            { word: "assassinate", severity: 4 },
-            { word: "shoot", severity: 3 },
-            { word: "stab", severity: 3 },
-            { word: "bomb", severity: 4 },
-            { word: "explode", severity: 4 },
-            { word: "torture", severity: 4 },
-            { word: "lynch", severity: 4 },
-            { word: "hang", severity: 3 },
-            { word: "behead", severity: 4 },
-            { word: "execute", severity: 4 }
+            // All downgraded to 1
+            { word: "kill", severity: 1 },
+            { word: "murder", severity: 1 },
+            { word: "assassinate", severity: 1 },
+            { word: "shoot", severity: 1 },
+            { word: "stab", severity: 1 },
+            { word: "bomb", severity: 1 },
+            { word: "explode", severity: 1 },
+            { word: "torture", severity: 1 },
+            { word: "lynch", severity: 1 },
+            { word: "hang", severity: 1 },
+            { word: "behead", severity: 1 },
+            { word: "execute", severity: 1 }
         ]
     }
 };
+
 
 // Helper functions for wordlist management
 const wordlistHelpers = {

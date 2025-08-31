@@ -11,7 +11,7 @@ function detectAbusiveContent(text, moderationLevel) {
     }
     
     const reasons = [];
-    let maxSeverity = 'none';
+    let maxSeverity = 'moderate';
     let obfuscationDetected = false;
     
     // Check against wordlists based on moderation level
